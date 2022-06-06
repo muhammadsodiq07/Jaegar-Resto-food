@@ -8,10 +8,10 @@ const allCategories = ["All", ...new Set(obj.map((item) => item.foodType))];
 
 function App() {
   const [save, setsave] = useState([]);
-  const [count,setcount] = useState(0)
+  const [count, setcount] = useState(0);
 
   const foodHandler = (food) => {
-    setcount(count + 1)
+    setcount(count + 1);
     if (save.indexOf(food) !== -1) return;
     setsave([...save, food]);
     console.log(save);
