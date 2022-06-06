@@ -1,0 +1,51 @@
+import React from "react";
+import "./OrderItems.scss";
+import deleteimg from "../../assets/imgs/delete.svg";
+
+function OrderItems(props) {
+  return (
+    <>
+      {props.save.map((item, i) => {
+        return (
+          <>
+            <li className="orderitems">
+              <div className="orderitems__main-div">
+                <div className="orderitems__img-div">
+                  <img
+                    className="orderitems__img"
+                    src={item.img}
+                    alt=""
+                  />
+                 <div className="orderitems__name-div">
+                 <p className="orderitems__name">
+                    {item.title}
+                  </p>
+                  <span className="orderitems__price-save">
+                   $ {item.money}
+                  </span>
+                 </div>
+                </div>
+                <div className="orderitems__count-div">
+                  <p className="orderitems__count">{props.count}</p>
+                  <p className="orderitems__price">$ {item.money}</p>
+                </div>
+              </div>
+              <div className="orderitems__input-main">
+                <input
+                  className="orderitems__input"
+                  type="text"
+                  placeholder="Please, just a little bit spicy only."
+                />
+                <button className="orderitems__deltee">
+                  <img src={deleteimg} alt="" />
+                </button>
+              </div>
+            </li>
+          </>
+        );
+      })}
+    </>
+  );
+}
+
+export default OrderItems;

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Inter:wght@400;500&family=Josefin+Sans&family=Lato:wght@400;700&family=Mulish:ital,wght@0,500;0,600;1,700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@import "./assets/scss/main.scss";
+
+body {
+  background-color: #252836;
+}
+
+
+::-webkit-scrollbar{
+  width: 3px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #191919;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #c9ac8c;
+}
