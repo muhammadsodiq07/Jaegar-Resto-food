@@ -45,6 +45,7 @@ function App() {
               save={save}
               setSaved={setsave}
               count={count}
+              setMenuItems={setMenuItems}
             />
           }
         />

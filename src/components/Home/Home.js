@@ -23,7 +23,9 @@ function Home(props) {
             Tuesday, 2 Feb 2021
             </p>
           </div>
-          <Search/>
+          <Search
+          setMenuItems={props.setMenuItems}
+          />
         </div>
         <div className="home__button-div">
         <Buttons filterItems={props.filterItems} foodType={props.foodType} />
