@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Buttons from "./Buttons";
 import Foods from "./Foods/Foods";
 import Orders from "../Orders/Orders";
+import Search from "../Search/Search";
 
 
 function Home(props) {
@@ -22,10 +23,7 @@ function Home(props) {
             Tuesday, 2 Feb 2021
             </p>
           </div>
-          <div className="home__input-div">
-          <i className='bx bx-search home__icon'></i>
-            <input className="home__input" type="text" placeholder="Search for food, coffe, etc.." />
-          </div>
+          <Search/>
         </div>
         <div className="home__button-div">
         <Buttons filterItems={props.filterItems} foodType={props.foodType} />
