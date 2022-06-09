@@ -1,51 +1,92 @@
-#menu-part{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 104px;
+.navBar{
+  width: 100%;
+  max-width: 104px;
   min-height: 100vh;
-  background-color: #1f1d2b;
-}
-.main-logo{
-  margin-bottom: 26px;
-  position: relative;
-  left: 18px;
-  border-radius: 12px;
-  top: 20px;
-  background-color: #543C3C;
-  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1f1d2b;
+  border-radius: 0 16px 16px 0;
 }
 
-.nav-lists{
+.navBar__logo-box{
+  padding: 24px 24px 16px 24px;
+}
+
+
+.navBar__logo-container{
+  background: #eb956a45;
+  border-radius: 12px;
+  padding: 11px 11px 13px 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  .bx{
+    color: #fff;
+    font-size: 30px;
+  }
+}
+
+.navBar__list{
   list-style: none;
   padding: 0;
-  padding-left: 25px;
-}
-.home-img{
-  margin-bottom: 22px;
+  margin: 0;
 }
 
-.nav-item:not(:last-child){
-  margin-bottom: 1px;
+.navBar__item{
+  padding: 10px 0 12px 12px;
 }
-.nav-item:hover{
-  background-color: #252836;
-  border-radius: 13px 0 0 13px;
-  transition-duration: 0.6s;
-  transition-timing-function: ease;
-  transition-property: border, background-color;
-  cursor: pointer;
-}
-.nav-item{
-  padding: 18px 24px 11px 12px;
-  margin-bottom: 20px !important;
-}
-.home-img {
-  background: #EA7C69;
-  box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.32);
+
+.navBar__holder{
+  padding: 16px;
+  background: transparent;
+  box-shadow: none;
   border-radius: 8px;
-  padding: 20px;
-  position: relative;
-  top: 10px;
-  left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.navBar__link{
+  display: inline-block;
+  text-decoration: none;
+  padding: 13px 24px 11px 12px;
+  background: transparent;
+  border-radius: 12px 0px 0px 12px;
+  transition: all 0.3s ease;
+
+  .bx{
+    color: #ea7c69;
+    font-size: 24px;
+    transition: all 0.3s ease;
+  }
+}
+
+.navBar__active{
+  background-color: #252836;
+
+  .navBar__holder{
+    background: #ea7c69;
+    box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.32);
+  }
+
+  .bx{
+    color: #fff;
+  }
+}
+
+.navBar__logout-box{
+  padding: 24px;
+}
+
+.navBar__logout-link{
+  padding: 16px;
+
+  .bx{
+    color: #ea7c69;
+    font-size: 24px;
+  }  
 }

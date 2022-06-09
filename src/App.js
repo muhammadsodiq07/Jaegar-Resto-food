@@ -1,23 +1,27 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import Bell from "./components/Bell/Bell";
+import Chart from "./components/Chart/Chart";
+import Discount from "./components/Discount/Discount";
 import Home from "./components/Home/Home";
+import Mail from "./components/Mail/Mail";
+import Settings from "./components/Settings/Settings";
 import obj from "./Object";
 
 const allCategories = ["All", ...new Set(obj.map((item) => item.foodType))];
 
 function App() {
   const [save, setsave] = useState([]);
-  const [count, setcount] = useState(0);
-
-  const foodHandler = (food) => {
-    setcount(count + 1);
-    if (save.indexOf(food) !== -1) return;
-    setsave([...save, food]);
-    console.log(save);
-  };
 
   let [menuItems, setMenuItems] = useState(obj);
+
+  const foodHandler = (food) => {
+    let temp = save.filter((item) => item.id == food.id);
+    food.num = temp.length + 1;
+    setsave([...save, food]);
+  };
+
   let [foodType, setCategories] = useState(allCategories);
 
   const filterItems = (foodType) => {
@@ -43,12 +47,33 @@ function App() {
               menuItems={menuItems}
               foodHandler={foodHandler}
               save={save}
-              setSaved={setsave}
-              count={count}
+              setsave={setsave}
               setMenuItems={setMenuItems}
             />
           }
         />
+        <Route path="/discount" element={<Discount
+             save={save}
+             setsave={setsave}
+        />}/>
+        <Route path="/chart" element={<Chart
+             save={save}
+             setsave={setsave}
+        />}/>
+        <Route path="/mail" element={<Mail
+             save={save}
+             setsave={setsave}
+        />}/>
+        <Route path="/bell" element={<Bell
+             save={save}
+             setsave={setsave}
+        />}/>
+         <Route path="/setting" element={<Settings
+             save={save}
+             setsave={setsave}
+             menuItems={menuItems}
+             setMenuItems={setMenuItems}
+        />}/>
       </Routes>
     </div>
   );

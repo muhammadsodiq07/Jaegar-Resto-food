@@ -40,7 +40,7 @@ function Home(props) {
       <div className="home__order">
             <Orders
              save={props.save}
-             setSaved={props.setsave}
+             setsave={props.setsave}
              count={props.count}
             />
       </div>
