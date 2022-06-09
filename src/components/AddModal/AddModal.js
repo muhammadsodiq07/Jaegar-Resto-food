@@ -24,14 +24,14 @@ function AddModal(props) {
   const addFoodHandler = () =>{
     props.setModal(!props.modal)
     props.setMenuItems([
-      ...props.menuItems, {
+      {
         img: 'https://www.expatica.com/app/uploads/sites/5/2014/05/french-food-1920x1080.jpg',
         title: foodName,
         money: foodPrice,
         theRest: foodBowl,
         id:uuidv4(), 
       },
-      
+      ...props.menuItems,
     ])
     setFoodName('')
     setFoodPrice('')
