@@ -14,6 +14,7 @@ import {
 
 import data from "../../Object";
 import AddModal from "../AddModal/AddModal";
+import Edit from "../Edit/Edit";
 
 function Settings(props) {
   let FilterBtn = ["All", ...new Set(data.map((item) => item.foodType))];
@@ -34,7 +35,15 @@ function Settings(props) {
 
   let [modal, setModal] = useState(false)
 
+
+  let [element, setElement] = useState([])
+  let [editOpen, setEditOpen] = useState(false)
   
+  let editHander = (id) => {
+    setElement(id)
+    setEditOpen(!editOpen)
+  }
+
   return (
     <div className="setting">
      
@@ -136,7 +145,9 @@ function Settings(props) {
                 </div>
                 <div className='edit-part d-flex justify-content-center align-items-center'>
                   <i className='bx edit-text fs-5 me-2 bx-edit-alt'></i>
-                  <p className='pt-3 edit-text'>Edit dish</p>
+                  <p
+                  onClick={() => editHander(item)}
+                  className='pt-3 edit-text'>Edit dish</p>
                 </div>
               </div>
             </li>
@@ -158,6 +169,13 @@ function Settings(props) {
         setModal={setModal}
         menuItems={props.menuItems}
         setMenuItems={props.setMenuItems}
+      />
+      <Edit
+      element={element}
+      editOpen={editOpen}
+      menuItems={props.menuItems}
+      setEditOpen={setEditOpen}
+      setMenuItems={props.setMenuItems}
       />
     </div>
   );

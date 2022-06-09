@@ -2,8 +2,8 @@ import React from "react";
 import "./Edit.scss"
 
 let foooding = [];
-function Edit({ editOpen, setEditOpen, content, element, setContent }) {
-  foooding = content;
+function Edit({ editOpen, setEditOpen, menuItems, element, setMenuItems }) {
+  foooding = menuItems;
 
   let cancelHander = () => {
     setEditOpen(!editOpen);
@@ -22,7 +22,7 @@ function Edit({ editOpen, setEditOpen, content, element, setContent }) {
     });
     setEditOpen(!editOpen);
   };
-  setContent(foooding)
+  setMenuItems(foooding)
 
   return (
     <div className={`edits ${editOpen ? "edits__open" : ""}`}>
