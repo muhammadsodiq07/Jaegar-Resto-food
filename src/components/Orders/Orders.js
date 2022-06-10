@@ -20,7 +20,7 @@ function Orders(props) {
   useEffect(() => {
     let num = 0;
     props.save.forEach((el) => {
-      num += el.money;
+      num += +el.money;
     });
     settotal(num);
 

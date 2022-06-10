@@ -21,10 +21,11 @@ function Edit({ editOpen, setEditOpen, menuItems, element, setMenuItems }) {
       }
     });
     setEditOpen(!editOpen);
+    e.target.reset();
   };
   setMenuItems(foooding)
 
-  return (
+  return (    
     <div className={`edits ${editOpen ? "edits__open" : ""}`}>
       <div className={`edits__main ${editOpen ? "edits__mopen" : ""}`}>
         <h1 className="edits__title">Edit Product</h1>
