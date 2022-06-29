@@ -7,8 +7,11 @@ import Orders from "../Orders/Orders";
 import Search from "../Search/Search";
 
 
+
+
 function Home(props) {
-  return (
+
+   return (
     <div className="home">
       <div className="home__navbar">
         <Navbar />
